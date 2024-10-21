@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VidSeeker Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .video-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .video-list li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .video-list a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <h2>Top 10 Ranked Videos</h2>
+    <ul class="video-list">
+        {% for video in videos %}
+        <li>
+            <a href="{{ video.url }}" target="_blank">{{ video.url }}</a> 
+            - Likes per View Ratio: {{ video.likes_per_view }}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
